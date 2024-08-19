@@ -11,12 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun SecondScreen(navController: NavController) {
+fun SecondScreen(navController: NavController, input: String?) {
     Scaffold {
             innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)) {
             Column {
                 Text(text = "Second Screen")
+                Text(text = "data = ${input}")
                 Button(onClick = { navController.navigate("Third") }) {
                     Text(text = "Go to Third Page")
                 }

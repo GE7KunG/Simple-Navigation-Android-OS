@@ -10,7 +10,10 @@ fun PageController() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "First") {
         composable("First") { FirstScreen(navController)}
-        composable("Second") { SecondScreen(navController)}
+        composable("Second/{text}") {
+            data -> val input = data.arguments?.getString("text")
+            SecondScreen(navController, input)
+        }
         composable("Third") { ThirdScreen(navController)}
     }
 }
