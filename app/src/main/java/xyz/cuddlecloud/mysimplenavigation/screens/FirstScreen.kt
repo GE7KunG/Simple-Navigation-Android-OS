@@ -30,7 +30,12 @@ fun FirstScreen(navController: NavController) {
             Column {
                 Text(text = "First Screen")
                 TextField(value = text, onValueChange = {text = it}, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
-                Button(onClick = { navController.navigate("${PageList.Second.name}/$text") }) {
+                Button(onClick = { if((Integer.parseInt(text) > 18)) {
+                    navController.navigate("${PageList.Second.name}/$text")
+                } else {
+                    navController.navigate(PageList.Third.name)
+                }
+                }) {
                     Text(text = "Go to Second Page")
                 }
             }

@@ -19,7 +19,7 @@ fun SecondScreen(navController: NavController, input: String?) {
     } catch (e : Exception) {
         e.printStackTrace()
     }
-    val s = if(age > 18) "Welcome :) ;-; ^-^" else "เข้าไม่ได้"
+    //val s = if(age > 18) "Welcome :) ;-; ^-^" else "เข้าไม่ได้"
 
     Scaffold {
             innerPadding ->
@@ -27,7 +27,7 @@ fun SecondScreen(navController: NavController, input: String?) {
             Column {
                 Text(text = "Second Screen")
                 Text(text = "Age: $age")
-                Text(text = s)
+                Text(text = "Welcome")
                 Button(onClick = { navController.navigate(PageList.Third.name) }) {
                     Text(text = "Go to Third Page")
                 }
