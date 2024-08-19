@@ -13,7 +13,7 @@ import androidx.navigation.NavController
 @Composable
 fun SecondScreen(navController: NavController, input: String?) {
 
-    var age = 0;
+    var age = -1;
     try {
         age = Integer.parseInt(input)
     } catch (e : Exception) {
@@ -28,7 +28,7 @@ fun SecondScreen(navController: NavController, input: String?) {
                 Text(text = "Second Screen")
                 Text(text = "Age: $age")
                 Text(text = s)
-                Button(onClick = { navController.navigate("Third") }) {
+                Button(onClick = { navController.navigate(PageList.Third.name) }) {
                     Text(text = "Go to Third Page")
                 }
             }

@@ -17,7 +17,7 @@ fun ThirdScreen(navController: NavController) {
         Surface (modifier = Modifier.padding(innerPadding)) {
             Column {
                 Text(text = "Third Screen")
-                Button(onClick = { navController.navigate("First") }) {
+                Button(onClick = { navController.navigate(PageList.First.name) }) {
                     Text(text = "Go to First Page")
                 }
             }
