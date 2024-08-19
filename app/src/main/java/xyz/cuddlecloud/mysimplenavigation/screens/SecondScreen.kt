@@ -12,12 +12,22 @@ import androidx.navigation.NavController
 
 @Composable
 fun SecondScreen(navController: NavController, input: String?) {
+
+    var age = 0;
+    try {
+        age = Integer.parseInt(input)
+    } catch (e : Exception) {
+        e.printStackTrace()
+    }
+    val s = if(age > 18) "Welcome :) ;-; ^-^" else "เข้าไม่ได้"
+
     Scaffold {
             innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)) {
             Column {
                 Text(text = "Second Screen")
-                Text(text = "data = ${input}")
+                Text(text = "Age: $age")
+                Text(text = s)
                 Button(onClick = { navController.navigate("Third") }) {
                     Text(text = "Go to Third Page")
                 }

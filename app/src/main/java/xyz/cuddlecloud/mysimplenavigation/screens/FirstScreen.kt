@@ -28,7 +28,7 @@ fun FirstScreen(navController: NavController) {
             Column {
                 Text(text = "First Screen")
                 TextField(value = text, onValueChange = {text = it})
-                Button(onClick = { navController.navigate("Second/${text}") }) {
+                Button(onClick = { navController.navigate("Second/$text") }) {
                     Text(text = "Go to Second Page")
                 }
             }
